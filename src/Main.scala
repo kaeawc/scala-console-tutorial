@@ -3,31 +3,40 @@ object Main {
 
   val prompt = "Do you want to do something? (y/n)"
 
+  /**
+   * Main method for this Scala console application.
+   * @param args
+   */
   def main(args: Array[String]) {
 
     val list = args mkString ", "
 
     println("Here are my args: " + list)
 
-    println(prompt)
-
     loop
 
   }
 
+  /**
+   * Loop to evaluate user input and then either keep working or stop the program.
+   */
   def loop = {
 
     while (getYesNo) {
 
       doSomething
 
-      println(prompt)
-
     }
 
   }
 
+  /**
+   * Prompts the user for input (y/n)
+   * @return
+   */
   def getYesNo:Boolean = {
+
+    println(prompt)
 
     val input = Console.readLine()
 
@@ -40,6 +49,9 @@ object Main {
     (!answer.isEmpty && answer.get)
   }
 
+  /**
+   * Work method of the program
+   */
   def doSomething {
 
     println("Doing something...")
