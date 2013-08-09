@@ -19,7 +19,7 @@ object Main {
 
     while (Console.readLine() != "n") {
 
-      println("Doing something...")
+      doSomething
 
       println(prompt)
 
@@ -27,4 +27,10 @@ object Main {
 
   }
 
+
+  def doSomething {
+
+    println("Doing something...")
+
+  }
 }
