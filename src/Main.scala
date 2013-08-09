@@ -3,7 +3,9 @@ object Main {
 
   def main(args: Array[String]) {
 
-    println("Hello World!")
+    val list = args mkString ", "
+
+    println("Here are my args: " + list)
 
   }
 }
