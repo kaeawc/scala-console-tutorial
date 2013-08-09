@@ -17,7 +17,7 @@ object Main {
 
   def loop = {
 
-    while (Console.readLine() != "n") {
+    while (getYesNo) {
 
       doSomething
 
@@ -27,6 +27,18 @@ object Main {
 
   }
 
+  def getYesNo:Boolean = {
+
+    val input = Console.readLine()
+
+    val answer = input.toLowerCase match {
+      case "n" => Some(false)
+      case "y" => Some(true)
+      case _   => None
+    }
+
+    (!answer.isEmpty && answer.get)
+  }
 
   def doSomething {
 
